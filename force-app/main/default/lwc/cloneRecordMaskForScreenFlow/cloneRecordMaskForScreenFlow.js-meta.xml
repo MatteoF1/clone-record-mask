@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningComponentBundle xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>58.0</apiVersion>
+    <isExposed>true</isExposed>
+    <targets>
+        <target>lightning__FlowScreen</target>
+    </targets>
+    <targetConfigs>
+        <targetConfig targets="lightning__FlowScreen">
+            <property name="recordId" type="String" description="Record Id for which the prepopulated fields must be loaded" label="Record Id" role="inputOnly" />
+            <property name="recordTypeId" type="String" description="Record Type Id for which the layout must be loaded" label="Record Type Id" role="inputOnly" />
+            <property name="objectApiName" type="String" description="SObject API Name for which the prepopulated fields must be loaded" label="SObject API Name" role="inputOnly" />
+            <property name="newRecordId" type="String" description="Id of the newly created record" label="New Record Id" role="outputOnly" />
+        </targetConfig>
+    </targetConfigs>
+</LightningComponentBundle>
