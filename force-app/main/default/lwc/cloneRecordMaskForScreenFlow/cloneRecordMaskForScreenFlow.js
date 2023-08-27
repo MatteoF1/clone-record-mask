@@ -1,6 +1,6 @@
 import { LightningElement, api, wire } from 'lwc';
 import { createRecord, generateRecordInputForCreate , getRecordCreateDefaults} from 'lightning/uiRecordApi';
-import {FlowNavigationNextEvent} from 'lightning/flowSupport';
+import { FlowNavigationBackEvent, FlowNavigationNextEvent } from 'lightning/flowSupport';
 import { ShowToastEvent } from "lightning/platformShowToastEvent";
 
 export default class CloneRecordMaskForScreenFlow extends LightningElement {
@@ -55,5 +55,11 @@ export default class CloneRecordMaskForScreenFlow extends LightningElement {
                 }),
             );
         });
+    }
+
+    handleCancel(event) {
+        event.preventDefault(); 
+        const navigateBackEvent = new FlowNavigationBackEvent();
+        this.dispatchEvent(navigateBackEvent);
     }
 }
