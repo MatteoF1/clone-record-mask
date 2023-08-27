@@ -1,4 +1,4 @@
-# Salesforce DX Project: Next Steps
+# Clone Record Mask for Screen Flows
 
 Small Salesforce LWC which provides a generic, low-maintenance record mask which 
 can be used in Screen Flows and allows to clone records while being in the context of a flow interview.
