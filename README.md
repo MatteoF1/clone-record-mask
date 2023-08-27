@@ -3,6 +3,11 @@
 Small Salesforce LWC which provides a generic, low-maintenance record mask which 
 can be used in Screen Flows and allows to clone records while being in the context of a flow interview.
 
+## Open Tasks
+
+- Add video?
+- With reference also to technical notes, the js file requires refactoring because it is possible there is a better idea to dynamically load fields from the layout of the object we want to create and at the same time retrieve field values of the object we want to clone.
+
 ## Technical Requirements
 
 The LWC shall:
@@ -18,10 +23,7 @@ The component [lightning-record-form](https://developer.salesforce.com/docs/comp
 
 The component [lightning-record-edit-form](https://developer.salesforce.com/docs/component-library/bundle/lightning-record-edit-form/documentation) requires much more effort, because it does not load the layout automatically. Instead the layout fields must be parsed using another API call. This component allows nevertheless to complete the job once the layout is parsed correctly.
 
-
 ## Other Documentation and Examples
-
-TODO: Add video?
 
 In the folder "examples" a screen flow used as example is presented.
 
