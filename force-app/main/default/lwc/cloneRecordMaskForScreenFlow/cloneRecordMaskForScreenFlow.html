@@ -1,12 +1,30 @@
 <template>
-        <lightning-record-form
-            record-id={recordId}
-            object-api-name={objectApiName}
-            columns="2"
-            mode="edit"
-            layout-type="Full"
-            onsubmit={handleSubmit}
-            oncancel={handleCancel}
-        >
-        </lightning-record-form>
+    <lightning-record-edit-form
+        object-api-name={objectApiName}
+        record-type-id={recordTypeId}
+        mode="edit"
+        onsuccess={handleSuccess}
+        onerror={handleError}
+    >
+    <lightning-accordion>
+        <template for:each={layoutSections} for:item="layoutSection">
+            <lightning-accordion-section key={layoutSection.id} name={layoutSection.id}  label={layoutSection.heading}>
+                <template key={layoutSection.id} for:each={layoutSection.layoutRows} for:item="sectionRow">
+                    <template key={sectionRow.rowKey} for:each={sectionRow.layoutItems} for:item="rowItem">
+                        <template lwc:if={rowItem.editableForNew}>
+                            <template key={rowItem.itemKey} for:each={rowItem.layoutComponents} for:item="field">
+                                <lightning-input-field key={field.apiName} field-name={field.apiName} required={field.required} value={field.value}>
+                                </lightning-input-field>
+                            </template>
+                        </template>
+                    </template>
+                </template>
+            </lightning-accordion-section>
+        </template>
+    </lightning-accordion>
+    <lightning-button-group>
+        <lightning-button class="slds-m-top_small" type="cancel" label="Cancel" onclick={handleCancel}></lightning-button>
+        <lightning-button class="slds-m-top_small" type="submit" label="Save"></lightning-button>
+    </lightning-button-group>
+    </lightning-record-edit-form>
 </template>
