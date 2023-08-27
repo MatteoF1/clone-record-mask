@@ -72,7 +72,11 @@ export default class CloneRecordMaskForScreenFlow extends LightningElement {
         }
     }
 
-    // this requires refactoring because it can be improved
+    /* this requires refactoring in e.g. the data structures because it can be improved
+    *  As is, it keeps the output of the "getRecordCreateDefaults" method and adds the
+    *  missing unique keys necessary in the HTML to use the template tags. In addition,
+    *  it fills the value component on the field.
+    */
     _prepareLayoutSectionsForDisplay(sections, defaultFields){
         const layoutSections = sections.map((section, indexSection) => { 
             const newSection= Object.assign({selected: false}, section);
