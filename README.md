@@ -3,6 +3,8 @@
 Small Salesforce LWC which provides a generic, low-maintenance record mask which 
 can be used in Screen Flows and allows to clone records while being in the context of a flow interview.
 
+N.B. this is a demo only. Not to be used for production.
+
 ## Open Tasks
 
 - Add video?
